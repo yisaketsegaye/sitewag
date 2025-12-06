@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wagon – Coming Soon</title>
+
+  <style>
+    :root {
+      --wagon-yellow: #d19a22;
+      --wagon-black: #000;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--wagon-yellow);
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      height: 100vh;
+      overflow: hidden;
+    }
+.subtitle-top-center {
+  position: fixed;
+  top: 170px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.15rem;
+  color: var(--wagon-black);
+  opacity: 0.85;
+  font-weight: 500;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  z-index: 998;
+}
+
+    
+
+    /* --- FULLSCREEN VIDEO BG --- */
+    .video-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      background: var(--wagon-yellow);
+    }
+
+    .video-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* --- TOP-LEFT LOGO --- */
+    .logo-wrapper {
+      position: fixed;
+      top: 22px;
+      left: 22px;
+      z-index: 999;
+    }
+
+    .logo {
+      width: 180px;
+      height: auto;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+    }
+
+    /* OPTIONAL tagline under logo */
+    .tagline {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      color: var(--wagon-black);
+      opacity: 0.75;
+    }
+
+    /* --- BOTTOM SECTION (Centered) --- */
+    .bottom {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .coming-soon {
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--wagon-black);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      margin-bottom: 16px;
+    }
+
+    /* Store Buttons */
+    .store-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .store-btn {
+      border-radius: 999px;
+      padding: 10px 20px;
+      border: 2px solid var(--wagon-black);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: var(--wagon-black);
+      background: rgba(255,255,255,0.16);
+      backdrop-filter: blur(4px);
+      transition: 0.2s ease;
+    }
+
+    .store-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.25);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+
+    .store-btn span:first-child { font-size: 1.2rem; }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .logo { width: 140px; }
+      .coming-soon { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background Video -->
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="wagon.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- TOP LEFT LOGO -->
+  <div class="logo-wrapper">
+  <img src="wagon.png" alt="Wagon Logo" class="logo">
+</div>
+
+<div class="subtitle-top-center">
+  Your favorite food trucks, all in one app.
+</div>
+
+
+  <!-- Bottom Section -->
+  <div class="bottom">
+    <div class="coming-soon">Coming Soon</div>
+
+    <div class="store-buttons">
+      <a class="store-btn" href="#">
+        <span></span>
+        <div>
+          <small style="display:block; font-size:0.7rem;">Download on the</small>
+          <strong style="font-size:1rem;">App Store</strong>
+        </div>
+      </a>
+
+      <a class="store-btn" href="#">
+        <span>▶</span>
+        <div>
+          <small style="display:block; font-size:0.7rem;">Get it on</small>
+          <strong style="font-size:1rem;">Google Play</strong>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
+
